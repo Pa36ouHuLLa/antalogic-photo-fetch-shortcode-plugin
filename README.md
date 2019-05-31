@@ -1,0 +1,1 @@
+# antalogic-photo-fetch-shortcode-plugin
