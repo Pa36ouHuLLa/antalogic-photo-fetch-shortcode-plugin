@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Antalogic Photo Fetch
+Plugin Name: Photo Fetch
 Description: Add shortcode for fetch photos from "https://jsonplaceholder.typicode.com/"
 */
-function antalogic_fetch_photo(){
+function fetch_photo(){
     wp_enqueue_script('fetch-js');
     wp_enqueue_script('spinner-loading');
     return
@@ -26,11 +26,11 @@ function antalogic_fetch_photo(){
          </div>";
 }
 
-add_shortcode('photos','antalogic_fetch_photo');
+add_shortcode('photos','fetch_photo');
 
-function antalogic_fetch_script () {
+function fetch_script () {
     wp_register_script( 'fetch-js', plugins_url( '/js/fetch.js' , __FILE__ ), array('jquery'), '1.0.0', true );
     wp_register_script( 'spinner-loading', plugins_url( '/js/spinner-loading.js' , __FILE__ ), array(), '1.0.0', true );
 }
 
-add_action( 'wp_enqueue_scripts', 'antalogic_fetch_script');
+add_action( 'wp_enqueue_scripts', 'fetch_script');

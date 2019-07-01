@@ -1,7 +1,7 @@
 var $j = jQuery.noConflict();
 $j('#all').click(function() {
     $j.post({
-        url: "/wp-content/plugins/antalogic_photo_fetch/ajax.php",
+        url: "/wp-content/plugins/photo_fetch/ajax.php",
         data: {'select': ''}
     }).done(function( data ) {
         $j("#photos-container").html(data);
@@ -10,7 +10,7 @@ $j('#all').click(function() {
 $j('.album-select').click(function() {
     let param = '?albumId=' + this.innerText.split(' ')[1];
     $j.post({
-        url: "/wp-content/plugins/antalogic_photo_fetch/ajax.php",
+        url: "/wp-content/plugins/photo_fetch/ajax.php",
         data: {'select': param}
     }).done(function( data ) {
         $j("#photos-container").html(data);
